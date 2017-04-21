@@ -1,0 +1,30 @@
+@charset "UTF-8";
+/// Loops through the `grid-visual` and `grid-collapse` mixins for each grid
+/// passed in. It then generates classes for each visual grid and collapsed
+/// objects, prefixed with the `class` property of the grid.
+///
+/// @group features
+///
+/// @name Grid classes simple
+///
+/// @argument {map} $grid
+///   A Neat grid map.
+///
+/// @example scss
+///   @include _grid-classes-simple($example);
+///
+/// @access private
+
+@mixin _grid-classes-simple($grid) {
+  @include _grid-media-optional($grid) {
+    $_class: map-get($grid, class);
+
+    .#{$_class}-visual {
+      @include grid-visual(rgba(#00d4ff, 0.25),$grid);
+    }
+
+    .#{$_class}-collapse {
+      @include grid-collapse($grid);
+    }
+  }
+}

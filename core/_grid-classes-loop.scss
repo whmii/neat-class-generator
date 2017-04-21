@@ -1,0 +1,45 @@
+@charset "UTF-8";
+/// Loops through the `grid-column`, `grid-push`, and `grid-shift` mixins for
+/// the grid passed in. It then generates classes for each number of columns
+/// (i.e. `1-of-12`, `2-of-12`, etc).
+///
+/// @group features
+///
+/// @name Grid classes loop
+///
+/// @argument {map} $grids
+///   A Neat grid map.
+///
+/// @example scss
+///   @include _grid-classes-loop($example);
+///
+/// @access private
+
+@mixin _grid-classes-loop($grid) {
+  @if map-has-key($grid, columns) != true {
+    $grid: map-merge($grid, (columns: 12));
+  }
+
+  $_columns: map-get($grid, columns);
+  $_class: map-get($grid, class);
+
+  @include _grid-media-optional($grid) {
+    @for $_column from 1 to ($_columns + 1) {
+      .#{$_class}-column-#{$_column}-of-#{$_columns} {
+        @include grid-column($_column);
+      }
+    }
+
+    @for $_column from -($_columns + 1) to ($_columns + 1) {
+      $_column-class: if($_column < 0, "neg#{$_column}", $_column);
+
+      .#{$_class}-push-#{$_column-class}-of-#{$_columns} {
+        @include grid-push($_column);
+      }
+
+      .#{$_class}-push-#{$_column-class}-of-#{$_columns} {
+        @include grid-shift($_column);
+      }
+    }
+  }
+}

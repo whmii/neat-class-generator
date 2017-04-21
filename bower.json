@@ -1,0 +1,33 @@
+{
+  "name": "neat-class-generator",
+  "description": "A generator for dynamically creating classes from Neat",
+  "version": "0.0.0",
+  "main": "core/_grid-generate-classes.scss",
+  "authors": [
+    "Will H McMahan (http://mcmahan.me)"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "columns",
+    "grid",
+    "layout",
+    "media",
+    "media-queries",
+    "neat",
+    "omega",
+    "sass",
+    "scss",
+    "semantic"
+  ],
+  "homepage": "https://github.com/whmii/neat-class-generator",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "neat": "^2"
+  }
+}

@@ -1,0 +1,26 @@
+/// `@include grid-generate-classes($grids:())` will generate classes for each
+/// of the grid maps passed in to it. `$neat-grid` is automatically included.
+///
+/// @group features
+///
+/// @name Grid generate classes
+///
+/// @argument {map} $grid
+///   A Neat grid map.
+///
+/// @example scss
+///   @include grid-generate-classes($example);
+///
+
+@mixin grid-generate-classes() {
+  @if map-has-key($grid, class) != true {
+    @error "⚠️  Your grid map must contain a defined `class:` property."
+  }
+
+  @include _grid-classes-loop($grid);
+  @include _grid-classes-simple($grid);
+
+  .grid-container {
+    @include grid-container();
+  }
+}

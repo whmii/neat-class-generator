@@ -1,0 +1,29 @@
+@charset "UTF-8";
+/// Wraps Neat's [`grid-media`](http://neat.bourbon.io/docs/2.0.0/#grid-media)
+/// mixin, causing the `media` property to be optional. If there is no `media`
+/// property present, the content will not be wrapped in a media query.
+///
+/// @group features
+///
+/// @name Grid media optional
+///
+/// @argument {map} $grid
+///   A map that contains a neat grid as outlined in
+///   [`custom-grids`](http://neat.bourbon.io/docs/2.0.0/#custom-grids)
+///
+/// @example scss
+///   @include _grid-media-optional($grid) {
+///     …
+///   }
+///
+/// @access private
+
+@mixin _grid-media-optional($grid) {
+  @if map-has-key($grid, media) {
+    @include grid-media($grid) {
+      @content;
+    }
+  } @else {
+    @content;
+  }
+}

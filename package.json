@@ -1,0 +1,32 @@
+{
+  "name": "neat-class-generator",
+  "version": "0.0.0",
+  "description": "A generator for dynamically creating classes from Neat 2.0",
+  "keywords": [
+    "columns",
+    "grid",
+    "layout",
+    "media",
+    "media-queries",
+    "neat",
+    "sass",
+    "scss",
+    "semantic"
+  ],
+  "homepage": "https://github.com/whmii/neat-class-generator",
+  "bugs": {
+    "url": "git+https://github.com/whmii/neat-class-generator/issues"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Will H McMahan",
+    "url": "http://mcmahan.me"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/whmii/neat-class-generator.git"
+  },
+  "dependencies": {
+    "bourbon-neat": "^2"
+  }
+}
