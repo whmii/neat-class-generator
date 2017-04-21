@@ -12,5 +12,5 @@ Gem::Specification.new do |s|
   s.platform      = Gem::Platform::RUBY
   s.require_paths = ["lib"]
   s.summary       = "A lightweight Sass grid framework"
-  s.version       = "0.0.0"
+  s.version       = "1.0.0"
 end

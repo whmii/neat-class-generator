@@ -1,6 +1,6 @@
 {
   "name": "neat-class-generator",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "A generator for dynamically creating classes from Neat 2.0",
   "keywords": [
     "columns",
