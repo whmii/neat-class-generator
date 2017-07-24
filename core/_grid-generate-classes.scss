@@ -12,7 +12,7 @@
 ///   @include grid-generate-classes($example);
 ///
 
-@mixin grid-generate-classes() {
+@mixin grid-generate-classes($grid) {
   @if map-has-key($grid, class) != true {
     @error "⚠️  Your grid map must contain a defined `class:` property."
   }
